@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#000000">
+<title>Jejak Pukul Tiga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <div id="phone" data-sb="light" data-hb="hide">
+
+    <!-- Status bar + Dynamic Island -->
+    <div id="statusbar">
+      <span id="sb-time">09:41</span>
+      <span id="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+        <span class="g5">5G</span>
+        <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="9" rx="2" fill="currentColor"/><rect x="24" y="4" width="2" height="5" rx="1" fill="currentColor" opacity=".4"/></svg>
+      </span>
+    </div>
+    <div id="island" aria-label="Dynamic Island pemutar musik" role="button" tabindex="0"></div>
+
+    <div id="screens">
+      <!-- 1. Judul / disclaimer -->
+      <section id="title" class="screen active">
+        <div class="t-wrap">
+          <p class="t-tag" id="t-tag"></p>
+          <h1 id="t-title"></h1>
+          <p class="t-sub" id="t-sub"></p>
+          <p class="t-credit" id="t-credit"></p>
+          <div class="t-warn" id="t-warn"></div>
+          <button id="t-ok" class="t-btn">ok</button>
+          <button id="t-reset" class="t-link">Reset progres</button>
+        </div>
+      </section>
+
+      <!-- 2. Lock screen -->
+      <section id="lock" class="screen">
+        <div class="lk-top">
+          <div class="lk-icon">🔒</div>
+          <div id="lock-date"></div>
+          <div id="lock-time"></div>
+        </div>
+        <div id="lock-notifs"></div>
+        <div id="lock-hint">Geser ke atas untuk membuka</div>
+      </section>
+
+      <!-- 3. Passcode -->
+      <section id="passcode" class="screen">
+        <h2>Masukkan Kode Sandi</h2>
+        <div id="dots"><i></i><i></i><i></i><i></i></div>
+        <div id="keys"></div>
+        <div id="pc-bottom">
+          <button id="pc-emg">Darurat</button>
+          <button id="pc-cancel">Batal</button>
+        </div>
+      </section>
+
+      <!-- 4. Home screen -->
+      <section id="home" class="screen">
+                <div id="home-widgets" aria-label="Widget kalender dan cuaca"></div>
+        <div id="grid"></div>
+        <div id="dock"></div>
+      </section>
+    </div>
+
+    <!-- Tampilan app (dirender oleh script.js) -->
+    <div id="appview"></div>
+
+    <!-- 5. Panggilan FaceTime -->
+    <section id="call" class="screen overlay">
+      <div class="c-top">
+        <div id="call-name"></div>
+        <div id="call-sub"></div>
+      </div>
+      <div id="call-cap"></div>
+      <div id="call-ring" class="c-bottom">
+        <button class="c-btn red" id="c-decline"><span>✕</span>Tolak</button>
+        <button class="c-btn green" id="c-accept"><span>📹</span>Terima</button>
+      </div>
+      <div id="call-live" class="c-bottom live hidden">
+        <div class="c-grid">
+          <button class="c-small" data-toggle>🎙️<small>Bisukan</small></button>
+          <button class="c-small" data-toggle>⌗<small>Keypad</small></button>
+          <button class="c-small" data-toggle>🔊<small>Speaker</small></button>
+        </div>
+        <button class="c-btn red" id="c-end"><span>✕</span>Akhiri</button>
+      </div>
+    </section>
+
+    <!-- Banner notifikasi + toast -->
+    <div id="banner">
+      <div id="bn-icon"></div>
+      <div class="bn-text"><b id="bn-title"></b><span id="bn-body"></span></div>
+      <small>sekarang</small>
+    </div>
+    <div id="toast"></div>
+
+    <div id="homebar"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
+
